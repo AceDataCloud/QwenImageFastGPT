@@ -31,7 +31,7 @@ const generateHandler = createToolHandler({
     prompt: z.string().trim().min(1).max(10000).meta({ title: 'Prompt', isToolParam: true } satisfies InputSchemaMetaType),
     model: z.string().trim().min(1).max(256).default('qwen-image-3.0').meta({ title: 'Model' } satisfies InputSchemaMetaType),
     size: z.string().trim().min(1).max(256).default('1024*1024').meta({ title: 'Size' } satisfies InputSchemaMetaType),
-    n: z.number().int().min(1).max(60).default(1).meta({ title: 'N' } satisfies InputSchemaMetaType),
+    n: z.number().int().min(1).max(6).default(1).meta({ title: 'N' } satisfies InputSchemaMetaType),
     watermark: z.boolean().default(false).meta({ title: 'Watermark' } satisfies InputSchemaMetaType),
   }),
   outputSchema,
@@ -55,13 +55,13 @@ const retrieveHandler = createToolHandler({
 export default defineToolSet({
   manifest: {
     pluginId: 'acedataQwenImage',
-    version: '0.1.0',
+    version: '0.2.0',
     name: { en: 'Ace Data Cloud Qwen Image', 'zh-CN': 'Ace Data Cloud Qwen Image 图像' },
     description: {
       en: 'Generate image with Qwen Image through Ace Data Cloud and retrieve the same task.',
       'zh-CN': '通过 Ace Data Cloud Qwen Image 图像生成并查询同一任务。'
     },
-    versionDescription: { en: 'Initial release', 'zh-CN': '首次发布' },
+    versionDescription: { en: 'Align API limits and task status handling', 'zh-CN': '对齐 API 限制和任务状态处理' },
     author: 'Ace Data Cloud',
     repoUrl: 'https://github.com/AceDataCloud/QwenImageFastGPT',
     tutorialUrl: 'https://github.com/AceDataCloud/QwenImageFastGPT#quick-start',
