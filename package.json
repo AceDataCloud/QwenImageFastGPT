@@ -1,6 +1,6 @@
 {
   "name": "fastgpt-plugin-acedata-qwen-image",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Ace Data Cloud Qwen Image tools for FastGPT",
   "type": "module",
   "main": "dist/index.js",

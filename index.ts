@@ -83,7 +83,7 @@ const batchHandler = createToolHandler({
 export default defineToolSet({
   manifest: {
     pluginId: 'acedataQwenImage',
-    version: '0.2.0',
+    version: '0.2.1',
     name: { en: 'Ace Data Cloud Qwen Image', 'zh-CN': 'Ace Data Cloud Qwen Image 图像' },
     description: {
       en: 'Generate image with Qwen Image through Ace Data Cloud and retrieve the same task.',
